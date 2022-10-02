@@ -78,43 +78,10 @@
               Property
             </h1>
             <p class="home__description">Find a variety of properties that suit you very easily, forget all difficulties in finding a residence for you</p>
-
-            <form action="#" class="home__search">
-              <i class="bx bxs-map"></i>
-              <input type="search" placeholder="Search by location..." class="home__search-input" />
-              <button class="button">Search</button>
-            </form>
-
-            <div class="home__value">
-              <div>
-                <h1 class="home__value-number">9K <span>+</span></h1>
-                <span class="home__value-description">
-                  Premium <br />
-                  Product
-                </span>
-              </div>
-
-              <div>
-                <h1 class="home__value-number">2K <span>+</span></h1>
-                <span class="home__value-description">
-                  Happy <br />
-                  Customer
-                </span>
-              </div>
-
-              <div>
-                <h1 class="home__value-number">28K <span>+</span></h1>
-                <span class="home__value-description">
-                  Awards <br />
-                  Winning
-                </span>
-              </div>
-            </div>
           </div>
-
           <div class="home__images">
             <div class="home__orbe"></div>
-
+            
             <div class="home__img">
               <img src="assets/img/home.jpg" alt="" />
             </div>
@@ -230,14 +197,14 @@
                     </div>
                     <div class="content">
                       <div class="price">
-                        <h2 class="popular__price"><span>$</span>{{$p->harga}}/mo</h2>
+                        <h2 class="popular__price"><span>$</span>{{$p->harga}}/{{$p->waktu}}</h2>
                         <a href="#" ><i class='bx bx-heart' ></i></a>
                         <a href="#" ><i class='bx bx-chat'></i></a>
                         <a href="https://api.whatsapp.com/send?phone={{$p->no_wa}}" ><i class='bx bxl-whatsapp' ></i></a>
                     </div>
                     <div class="location">
                         <h3 class="popular__title">{{$p->nama_properti}}</h3>
-                        <p class="popular__description"> {{$p->lokasi}}</p>
+                        <p class="popular__description"> {{$p->deskripsi}}</p>
                     </div>
                     <div class="details">
                       <h3> <i class='bx bx-expand'></i></i> {{$p->luas_properti}} sqft</h3>

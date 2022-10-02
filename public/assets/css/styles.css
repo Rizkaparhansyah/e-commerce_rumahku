@@ -40,21 +40,8 @@
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
-}
 
-/* Responsive typography */
-@media screen and (min-width: 1024px) {
-  :root {
-    --biggest-font-size: 4rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: 0.875rem;
-    --smaller-font-size: 0.813rem;
-  }
 }
-
 /*=============== BASE ===============*/
 * {
   box-sizing: border-box;
@@ -179,11 +166,11 @@ body.dark-theme {
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-  max-width: 1024px;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
+/* .container {
+  /* max-width: 1024px; */
+  /* margin-left: 1.5rem;
+  margin-right: 1.5rem; 
+} */
 
 .grid {
   display: grid;
@@ -191,11 +178,13 @@ body.dark-theme {
 
 .section {
   padding: 4.5rem 0 2rem;
+  
 }
 
 .section__title {
   font-size: var(--h2-font-size);
   margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 
 .section__title span {
@@ -206,6 +195,7 @@ body.dark-theme {
   display: block;
   font-size: var(--small-font-size);
   color: var(--second-color);
+  margin-left: 1rem;
 }
 
 .main {
@@ -245,7 +235,7 @@ body.dark-theme {
   color: var(--first-color);
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
   .nav__menu {
     position: fixed;
     bottom: 2rem;
@@ -332,6 +322,7 @@ body.dark-theme {
   font-size: var(--biggest-font-size);
   line-height: 120%;
   margin-bottom: 1.25rem;
+
 }
 .home__description {
   color: var(--text-color-light);
@@ -432,6 +423,112 @@ body.dark-theme {
 .logos__img img:hover {
   opacity: 0.6;
 }
+
+/* ===================dasdadadaad====================== */
+
+.hero-content {
+  background-color: var(--oxford-blue_60);
+  padding-block: 180px;
+  padding-inline: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  text-align: center;
+}
+
+.hero-title {
+  max-width: 16ch;
+  margin-inline: auto;
+  color: var(--white);
+  line-height: 1.5;
+  margin-block-end: 20px;
+}
+
+.hero-title .span {
+  display: inline-block;
+  color: var(--green-pigment);
+}
+
+.hero-text {
+  color: var(--white_70);
+  font-size: var(--fs-3);
+  line-height: 1.4;
+}
+
+.hero-form-wrapper {
+  background-color: var(--white);
+  margin-block-start: -100px;
+  width: calc(100% - 10px);
+  margin-inline: auto;
+  border-radius: var(--radius-16);
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+}
+
+.form-tab {
+  padding: 16px;
+  border-block-end: 1px solid var(--gainsboro);
+  display: flex;
+  justify-content: center;
+}
+
+.tab-btn {
+  padding: 12px 24px;
+  color: var(--oxford-blue);
+  font-weight: var(--fw-500);
+  border-radius: var(--radius-6);
+  transition: var(--transition);
+}
+
+.tab-btn:is(:hover, :focus) { color: var(--green-pigment); }
+
+.tab-btn.active {
+  color: var(--white);
+  background-color: var(--green-pigment);
+}
+
+.hero-form {
+  display: grid;
+  gap: 25px;
+  padding: 25px;
+}
+
+.hero-form .input-wrapper { position: relative; }
+
+.hero-form :is(.input-label, .input-field) { color: var(--oxford-blue); }
+
+.hero-form .input-label {
+  font-weight: var(--fw-500);
+  margin-block-end: 10px;
+}
+
+.hero-form :is(.input-field, .dropdown-list) {
+  min-height: 40px;
+  border: 1px solid var(--gainsboro);
+  border-radius: var(--radius-4);
+  outline: none;
+  transition: var(--transition);
+}
+
+.hero-form :is(.input-field, .dropdown-list):focus { border-color: var(--green-pigment); }
+
+.hero-form .input-wrapper ion-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(20%);
+  left: 15px;
+  color: var(--oxford-blue);
+  --ionicon-stroke-width: 40px;
+}
+
+.hero-form .input-field { padding-inline: 45px 15px; }
+
+.hero-form .input-field::placeholder { color: var(--manatee); }
+
+.hero-form .dropdown-list { padding-inline: 15px; }
+
+.hero-form .btn { max-width: 100%; }
+/* ===================dasdadadaad====================== */
 
 /*=============== POPULAR ===============*/
 .pupolar__container {
@@ -554,7 +651,7 @@ body.dark-theme {
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: auto;
+  height: 250px;
 }
 
 .featured .box-container .box .image-container img {
@@ -1169,6 +1266,7 @@ body.dark-theme {
   }
   .home__data {
     padding-bottom: 2rem;
+    margin-left: 5rem;
   }
   .logos__container {
     grid-template-columns: repeat(4, max-content);
@@ -1208,6 +1306,8 @@ body.dark-theme {
   }
   .nav {
     height: calc(var(--header-height) + 1rem);
+    display: flex;
+    justify-content: space-around;
   }
   .nav__menu {
     width: initial;
