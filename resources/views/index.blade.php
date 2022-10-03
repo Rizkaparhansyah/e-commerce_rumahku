@@ -149,7 +149,7 @@
            @foreach ($properti as $p)
                
            <article class="popular__card swiper-slide">
-             <img {{ $path = Storage::url($p->poto)}} src="{{$path}}" class="popular__img" alt="">
+             <img {{$path = Storage::url($p->poto); }} src="{{ url($path) }}" class="popular__img" alt="">
              <div class="popular__data">
                <h2 class="popular__price"><span>$</span>{{$p->harga}}</h2>
                <h3 class="popular__title">{{$p->nama_properti}}</h3>
@@ -380,48 +380,22 @@
           <span class="section__subtitle">Best Team</span>
           <h2 class="section__title">TEAM <span>.</span></h2>
           <div class="profile__container">
+@foreach ($tim as $t)
           <div class="profile-card">
             <div class="img">
-                <img src="assets/img/pic-1.png">
+                <img {{ $link = Storage::url($t->foto)}} src="{{url($link)}}">
             </div>
             <div class="caption">
-                <h3 class="profile__title">Fajar</h3>
-                <p class="profile__description">Fullstack Developer</p>
+                <h3 class="profile__title">{{$t->nama}}</h3>
+                <p class="profile__description">{{$t->profesi}}</p>
                 <div class="social-links">
-                  <a href="#"><i class='bx bxl-facebook-square'></i></a>
-                  <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                  <a href="#"><i class='bx bxl-github'></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="profile-card">
-            <div class="img">
-              <img src="assets/img/pic-2.png">
-            </div>
-            <div class="caption">
-              <h3 class="profile__title">Tuti</h3>
-              <p class="profile__description">Fullstack Developer</p>
-                <div class="social-links">
-                  <a href="#"><i class='bx bxl-facebook-square'></i></a>
-                  <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                  <a href="#"><i class='bx bxl-github'></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="profile-card">
-            <div class="img">
-              <img src="assets/img/pic-3.png">
-            </div>
-            <div class="caption">
-              <h3 class="profile__title">Rizka</h3>
-              <p class="profile__description">Fullstack Developer</p>
-                <div class="social-links">
-                    <a href="#"><i class='bx bxl-facebook-square'></i></a>
-                    <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                    <a href="#"><i class='bx bxl-github'></i></a>
+                  <a href="{{$t->facebook}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-facebook-square'></i></a>
+                  <a href="{{$t->instagram}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram-alt'></i></a>
+                  <a href="{{$t->github}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
                 </div>
             </div>
           </div>
+@endforeach
         </div>
       
       </section>
